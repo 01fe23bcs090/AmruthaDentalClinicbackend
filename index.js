@@ -17,12 +17,12 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST,
     dialect: 'mysql', 
     port: process.env.DB_PORT || 3306,
-    /*dialectOptions: {
+    dialectOptions: {
         ssl: {
             require: true,
             rejectUnauthorized: false 
         }
-    }*/
+    }
   }
 );
 
@@ -286,5 +286,6 @@ app.put('/schedule-next/:id', async (req, res) => {
         }
     } catch (e) { res.status(500).json(e); }
 });
+
 
 app.listen(5000, () => console.log("🚀 Server running on 5000"));
